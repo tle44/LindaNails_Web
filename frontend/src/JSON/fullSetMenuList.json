@@ -1,0 +1,54 @@
+[
+    {
+        "serviceName": "Fullset w.Shellac",
+        "price": 50
+    },
+    {
+        "serviceName": "Refill w.Shellac",
+        "price": 40
+    },
+    {
+        "serviceName": "Color Powder Fullset",
+        "price": 50
+    },
+    {
+        "serviceName": "Color Powder Fill",
+        "price": 40
+    },
+    {
+        "serviceName": "Ombre Fullset",
+        "price": 58
+    },
+    {
+        "serviceName": "Ombre Fill $40-$50",
+        "price": 40
+    },
+    {
+        "serviceName": "Pink White Fullset",
+        "price": 55
+    },
+    {
+        "serviceName": "Pink White Fill In $38-$48",
+        "price": 38
+    },
+    {
+        "serviceName": "Regular Fullset",
+        "price": 38
+    },
+    {
+        "serviceName": "Regular Fill In",
+        "price": 30
+    },
+    {
+        "serviceName": "White or Pearl Tip Fullset",
+        "price": 40
+    },
+    {
+        "serviceName": "White or Pearl Tip Fill In",
+        "price": 30
+    }
+  
+  
+    
+]
+

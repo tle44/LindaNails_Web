@@ -39,7 +39,6 @@ const ServicePage = () => {
                     {/* Menu component for add-on services */}
                     <Menu menuTitle="Add On" menuList={addOnMenuList} />
                 </div>
-        
         </MainLayout>
     );
 };

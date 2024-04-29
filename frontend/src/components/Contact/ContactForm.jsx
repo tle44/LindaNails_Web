@@ -54,7 +54,6 @@ export default function ContactPage() {
             const response = await axios.post("/api/contact", values, {
                 headers: {
                     "Content-Type": "application/json",
-                    // Add any additional headers as needed
                 },
             });
 

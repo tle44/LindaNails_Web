@@ -1,14 +1,14 @@
 import express from "express";
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
 
-// Creating express router
+dotenv.config(); // Load environment variables from .env file
+
 const router = express.Router();
 
-// Email credentials
-const email = "testingwebsite478@gmail.com";
-const pass = "zgimhmqmzxoblcby";
+const email = process.env.EMAIL;
+const pass = process.env.PASSWORD;
 
-// Creating nodemailer transporter
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -55,7 +55,7 @@ router.post("/", (req, res) => {
     // Email options
     const mailOptions = {
         from: email,
-        to: "testingwebsite478@gmail.com",
+        to: process.env.EMAIL,
         ...generateEmailContent({ name, email, subject, message }),
         subject: "New Contact Message",
     };

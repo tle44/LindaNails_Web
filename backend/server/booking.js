@@ -1,11 +1,14 @@
 import express from "express";
 import nodemailer from "nodemailer";
-// Creating express router
+import dotenv from "dotenv";
+
+dotenv.config(); // Load environment variables from .env file
+
 const router = express.Router();
-// Email credentials
-const email = "testingwebsite478@gmail.com";
-const pass = "zgimhmqmzxoblcby";
-// Creating nodemailer transporter
+
+const email = process.env.EMAIL;
+const pass = process.env.PASSWORD;
+
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -13,7 +16,7 @@ const transporter = nodemailer.createTransport({
         pass: pass,
     },
 });
-// Fields for booking message
+
 const BOOKING_MESSAGE_FIELDS = {
     name: "Name",
     phoneNumber: "Phone Number",
@@ -22,7 +25,7 @@ const BOOKING_MESSAGE_FIELDS = {
     cart: "Cart",
     selectedTechnician: "Selected Technician",
 };
-// Function to generate email content
+
 const generateEmailContent = (data) => {
     const stringData = Object.entries(data).reduce(
         (str, [key, val]) =>
@@ -52,7 +55,7 @@ router.post("/", (req, res) => {
 
     const mailOptions = {
         from: email,
-        to: "testingwebsite478@gmail.com",
+        to: process.env.EMAIL,
         ...generateEmailContent({
             name,
             phoneNumber,
@@ -63,7 +66,7 @@ router.post("/", (req, res) => {
         }),
         subject: "New Booking",
     };
-    // Sending email
+
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             res.status(500).json({ message: "Failed to book appointment" });
